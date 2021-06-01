@@ -1,0 +1,15 @@
+{
+  "models": "LR",
+  "rcv": {
+    "repeat": 10,
+    "folds": 3
+  },
+  "run_gridsearch": {
+    "LR": {
+      "penalty": ["l2"],
+      "C": [0.001, 0.01, 0.1, 1, 10, 100],
+      "solver": ["saga"],
+      "max_iter": [10000]
+    }
+  }
+}
