@@ -7,7 +7,7 @@ Available datatsets can be found in `./data`. If needed, file names should be ch
 Edit the code with file names and paths before running it. Folder organization is as follows:
  
 ```
-../prs_schizophrenia --> Project folder
+../prs_psychosis --> Project folder
 ./model --> Python scripts
 ./Rcode --> R scripts
 ./data --> Input data
@@ -56,7 +56,7 @@ Features:
             (0=single, 1=widowed, 2=divorced/separated, 3=partnered); 
             and `biomeQ.aut|scz|dep.grandpar` (0=None, 1=one or more).
 
-### GPC
+### GPC (Available upon request)
 
 Outcome variables:
 
