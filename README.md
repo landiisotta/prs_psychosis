@@ -17,14 +17,14 @@ Edit the code with file names and paths before running it. Folder organization i
 Clone github project folder:
 
 ```
-clone https://github.mountsinai.org/isotta-landi/prs_schizophrenia.git
+clone https://github.com/landiisotta/prs_psychosis
 ```
 
 Provided a Python3 environment (`myenv`), within terminal run:
 
 ```
 source myenv/bin/activate
-cd ./prs_schizophrenia
+cd ./prs_psychosis
 pip install -r ./model/requirements.txt
 ```
 
@@ -56,7 +56,7 @@ Features:
             (0=single, 1=widowed, 2=divorced/separated, 3=partnered); 
             and `biomeQ.aut|scz|dep.grandpar` (0=None, 1=one or more).
 
-### GPC (Available upon request)
+### GPC
 
 Outcome variables:
 
@@ -91,7 +91,7 @@ Pipeline:
 
 4. Evaluate best model on test set and report F2 and AUPRC (compare scores with 100 bootstrap iterations).
 
-**Remark**: Remember to edit configuration files at `./model/configuration/baseline_config_*.json`.
+**Remark**: Remember to edit configuration files at `./model/configuration/config_biome|gpc.json`.
 
 Pipeline was replicated separately for EUR/AFR/AMR ancestries and with the "binarized" version of PRS 
 (create binarized PRS with `binarize_prs.R`).
@@ -189,12 +189,9 @@ Edit configuration files (folder `./model/configuration`) and initialize logger 
 
     **Output**: `gridsearch_LRbestestimator_retrained.pkl` (best model estimator); `best_model_eval.pkl` tuple with: 
     true labels, predicted labels, predicted probabilities, prediction score (e.g., F2, AUPRC), precision, recall; 
-    `predicted_prob.txt` (prediction labels and probabilities).
+    `predicted_prob.txt` (predicted labels and probabilities).
 
-5. Find function for AUPRC bootstrapping for test set performance comparison in `bootstrap_auprc.R`.
+5. Code for test set comparisons of bootstrap AUPRC estimates can be found in `bootstrap_auprc.R`.
   
 6. Visualize results: code and functions for results visualization and score comparisons, as displayed/reported 
-   in the manuscript, can be found in:
-
-> `visualization.py`, `gs_results_viz.ipynb`; 
-> `comparison_f2val.R`.
+   in the manuscript, can be found in: `visualization.py`, `gs_results_viz.ipynb`; `comparison_f2val.R`.
